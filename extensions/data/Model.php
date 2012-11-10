@@ -220,6 +220,12 @@ class Model extends \lithium\data\Model {
 							if(isset($alternateRelations[$relationKey])){
 								// get options from relationship
 								$relation = $alternateRelations[$relationKey]->data();
+								
+								//set the type to read of this is not a mongodb connection
+								if(is_a($self,'lithium\data\source\Database'))
+								{
+									$relation['type'] = 'read';
+								}
 
 								if(!is_int($key) && !empty($val)){
 									$relation = array_merge($relation, $val);

@@ -226,7 +226,7 @@ class Model extends \lithium\data\Model {
 								{
 									$relation['type'] = 'read';
 								}
-
+								
 								if(!is_int($key) && !empty($val)){
 									$relation = array_merge($relation, $val);
 								}

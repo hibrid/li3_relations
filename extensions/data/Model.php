@@ -19,9 +19,9 @@ class Model extends \lithium\data\Model {
 
 	protected $_alternateRelations = array();
 
-	public static function __init(){
-		static::_isBase(__CLASS__, true);		
-		parent::__init();
+	public static function _initialize($class){
+		//static::_isBase(__CLASS__, true);		
+		parent::_initialize($class);
 		self::_addRelations();
 		self::_connectionFilters();
 	}
